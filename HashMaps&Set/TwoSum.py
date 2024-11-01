@@ -28,14 +28,12 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         dict_num = dict()
         
-        for index, num in enumerate(nums):
-            dict_num[num] = index
         
         for index, num in enumerate(nums):
             resultant = target - num
-            if resultant in dict_num and dict_num[resultant]!= index:
+            if resultant in dict_num:
                 return [index,dict_num[resultant]]
-        
+            dict_num[num] = index
 
     
 
