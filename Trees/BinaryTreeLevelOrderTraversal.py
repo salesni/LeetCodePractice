@@ -32,7 +32,7 @@ class Solution:
         ans=[]
         queue = deque()
         queue.append(root)
-        #BFS
+        #DFS
         while queue:
             level = []
             #For to iterate by level
