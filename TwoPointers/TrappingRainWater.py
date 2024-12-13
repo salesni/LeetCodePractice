@@ -14,6 +14,33 @@ Output: 9
 """
 class Solution:
     def trap(self, height: List[int]) -> int:
+        n = len(height)
+        if n == 0:
+            return 0
+        max_left = 0 
+        max_right = 0
+        left, right = 0, n -1
+        water = 0
+
+        while left <= right:
+            if height[left] <= height[right]:
+                if max_left < height[left]:
+                    max_left = height[left]
+                else:
+                    water += max_left - height[left]
+                left += 1
+            else:
+                if max_right < height[right]:
+                    max_right = height[right]
+                else:
+                    water += max_right - height[right]
+                right -= 1
+
+        return water
+
+
+class Solution:
+    def trap(self, height: List[int]) -> int:
 
         # we need to look
         # for the highest right and left wall, to identify how many
